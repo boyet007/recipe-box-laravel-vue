@@ -20,7 +20,7 @@ class CreateRecipeIngredientsTable extends Migration
             
             $table->string('name');
 
-            $table->int('qty');
+            $table->string('qty');
 
         });
     }
