@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Faker\Factory;
+use App\User;
 
 class UsersTableSeeder extends Seeder
 {
@@ -11,6 +13,16 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        $faker = Factory::create();
+        User::truncate();
+        
+        foreach(range(1,20) as $i) {
+            User::create([
+                'name' => $faker->name,
+                'email' => $faker->email,
+                'password' => bcrypt('password'),
+                'api_token' => str_random(60)
+            ]);
+        }
     }
 }
