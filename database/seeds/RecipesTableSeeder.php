@@ -42,7 +42,7 @@ class RecipesTableSeeder extends Seeder
 
         foreach(range(1, mt_rand(5,12)) as $k) {
             RecipeDirection::create([
-                'recipe_id' => $recipe_id,
+                'recipe_id' => $recipe->id,
                 'description' => $faker->sentence
             ]);
         }
